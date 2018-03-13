@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>我的订单</title>
+<link rel="stylesheet" type="text/css" href="css/fixation.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<!-- 头部公共部分 -->
+<div class="head">
+	
+	<div class="headLogo screenWidth clearfix">
+		<div class="headLogo_logo login fl" >
+			<div class="login_img fl"><img src="img/logo.jpg"></div>
+			<span class="login_tnter fr">欢迎注册</span>
+		</div>
+
+		<div class="headLogoSeek">
+			<div class="lgoSeek_text login_idea fr">
+				我已经注册，马上登陆
+			</div>
+		</div>
+	</div>
+	
+<!-- 注册 -->
+	<div class="screenWidth">
+		<div class="register">
+			<div class="register_gift">注册有礼物送！</div>
+			<form class="register_form" id="register">
+				<div class="register_box clearfix">
+					<div class="register_user fl">
+						<span>用户名:</span>
+					</div>
+					<input class="register_input" type="text" name="user" value="" id="text">
+					<span  class="register_judge">请输入用户名</span>
+				</div>
+				<div class="register_box clearfix">
+					<div class="register_user fl">
+						<span>设置密码:</span>
+					</div>
+					<input class="register_input" type="password" name="password">
+					<span  class="register_judge">请输入用户名</span>
+				</div>
+				<div class="register_box clearfix">
+					<div class="register_user fl">
+						<span>确认密码:</span>
+					</div>
+					<input class="register_input" type="password" name="repassword">
+					<span  class="register_judge">请输入密码</span>
+				</div>
+				<div class="register_box clearfix">
+					<div class="register_user fl">
+						<span>手机号码:</span>
+					</div>
+					<input class="register_input" type="text" name="phone" maxlength="11">
+					<span  class="register_judge">请输入手机号码</span>
+				</div>
+				<div class="register_box clearfix">
+					<div class="register_user  fl">
+						<span>手机验证码:</span>
+					</div>
+					<input class="register_input register_cell" type="" name="">
+					<span  class="register_Code">请输入用户名</span>
+				</div>
+				<div class="register_box clearfix">
+					<div class="register_user  fl">
+						<span>验证码:</span>
+					</div>
+					<input class="register_input register_cell" type="" name="">
+					<span  class="register_Code">10086</span>
+				</div>
+				<div class="register_agree">同意《华凌条约》</div>
+				<input value="立即注册" type="submit" class="register_login" name="">
+			</form>
+			
+		</div>
+	</div>
+</div>
+<!-- 头部公共部分结束 -->
+<!-- 尾部公共部分 -->
+
+<div class="lastBottom">
+  <p class="lastBottom-one"><a href="#">关于华凌</a><span>|</span><a href="#">关于华凌</a><span>|</span><a href="#">关于华凌</a><span>|</span><a href="#">关于华凌</a><span>|</span><a href="#">关于华凌</a></p>
+  <p class="lastBottom-two">Copyright © 1985-2013 华凌品牌官网 广东美的制冷设备有限公司版权所有 粤ICP备06017340号-2</p>
+  <p class="lastBottom-three"><span><img src="img/icon/lastbuttom.jpg"></span><span><img src="img/icon/lastbuttom.jpg"></span><span><img src="img/icon/lastbuttom.jpg"></span></p>
+</div>
+<script>
+	$(document).ready(function(){
+		$('input[name=user]').blur(function(){
+			val = this.value;
+			if(val.length<6){
+				$(this).data({'s':0})
+				$(this).next().html('用户名不能小于6个字符').css({'color':'#f00'})
+			}else{
+				$(this).data({'s':1})
+				$(this).next().html('输入正确').css({'color':'green'});
+			}
+		});
+		$('input[name=password]').blur(function(){
+			val = this.value;
+			if(val.length<12){
+				$(this).data({'s':0})
+				$(this).next().html('密码不能小于12个字符').css({'color':'#f00'})
+			}else{
+				$(this).data({'s':1})
+				$(this).next().html('输入正确').css({'color':'green'});
+			}
+		});
+		$('input[name=repassword]').blur(function(){
+			val2=$('input[name=password]').val();
+			val = this.value;
+			if(val !=val2){
+				$(this).data({'s':0})
+				$(this).next().html('密码不一致').css({'color':'#f00'})
+			}else{
+				$(this).data({'s':1})
+				$(this).next().html('输入正确').css({'color':'green'});
+			}
+		});
+		$('input[name=phone]').blur(function(){
+			val = this.value;
+			if(!val.match(/^139\d{8}$/)){
+				$(this).data({'s':0})
+				$(this).next().html('手机号码不正确').css({'color':'#f00'})
+			}else{
+				$(this).data({'s':1})
+				$(this).next().html('输入正确').css({'color':'green'});
+			}
+		});
+		$('form').submit(function(){
+			$('input.register_input').blur();
+			tot= 0;
+			$('input.register_input').each(function(){
+				tot += $(this).data('s');
+			});
+			if(tot !== 6){
+				return false;
+			}
+		})
+	})
+</script>
+</body>
+
+</html>

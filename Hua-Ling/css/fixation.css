@@ -1,0 +1,71 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,inpuy{margin:0;padding: 0;}
+body{font-size: 14px;}
+img{border: none;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style: normal; font-weight: normal;}
+caption,th{text-align: left;}
+table{border-collapse: collapse; border-spacing: 0;}
+ol,ul{list-style: none;}
+li{list-style: none;}
+input,select,textarea{outline: none;}
+textarea{resize: none;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline; color: red;}
+q:before,q:after{content: ;}
+abbr,acronym{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-weight: normal;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%}
+
+input{border:none; background:none;}
+.text-ellipsis{white-space: nowrap; /*设置不折行*/ text-overflow: ellipsis;/*这就是省略号*/ -o-text-overflow:ellipsis; /*兼容opera*/overflow: hidden;/*设置超过的隐藏*/}
+/*清浮动*/
+.clearfix:after{content: ""; display: block; clear: both;}
+.clearfix{zoom:1;}
+.fl{float: left;}
+.fr{float: right;}
+
+/*屏幕的宽度*/
+.screenWidth{ width: 1200px; margin: 0 auto; }
+
+.hr_100{height: 100px;}
+
+
+
+/*公共部分*/
+
+
+.lastService{height: 275px; background-color: #e6e6e6;}
+.lastService-text{ margin-left: 50px;  float: left;}
+.lastService-text .lastService-text-matter{ padding-top: 30px; float: left; margin-right: 84px;}
+.lastService-text .lastService-text-matter dt{margin-bottom:25px;  font-size: 20px;}
+.lastService-text .lastService-text-matter dd{margin-bottom:20px; }
+
+.lastTouch{ height: 250px; border-left: 2px solid #999999; float: left; margin: 13px 0 0 -45px; }
+
+.lastTouch-left{margin-right: 90px; margin-top: 45px; margin-left: 40px; font-size: 16px;}
+.lastTouch-left-mag{ margin: 20px 0 30px 0;  color: #999999;}
+.lastTouch-left-form{ border: 3px solid #aaaaaa; height: 20px; width: 225px; padding: 5px; }
+.lastTouch-left-input{}
+.lastTouch-left-phone{ margin-top: 10px; color: #666666; }
+
+.lastTouch-right{margin-top: 20px;}
+.lastTouch-right-mag{margin-bottom: 19px; font-size: 18px;}
+
+.lastBottom{ height: 110px; background: #13a389; color: #fff;}
+.lastBottom p{ text-align: center;}
+.lastBottom .lastBottom-one{ padding-top: 18px; }
+.lastBottom .lastBottom-one  a{color: #fff; margin: 0 12px;}
+.lastBottom-two{ margin: 19px 0 11px 0; }
+.lastBottom-three span{ margin-right:30px;  }
+
+/*幻灯片按钮*/
+.arrow{ background-color: #03957b; z-index: 9999; position: absolute; opacity: 0; }
+.ban:hover .arrow{opacity: 0.5; text-decoration: none;}
+#prev,#next { border: 1px solid #03ec77; border-radius: 10px; width: 50px; height: 50px;  font-size: 40px; top: 50%; ;line-height: 50px; text-align: center;}
+#prev{ left: 350px;}
+.pageDot{margin-right: 25px; margin-left: -20px;}
+#next {right: 300px;}
+
+
+
+.hr_100{ height: 100px; }
